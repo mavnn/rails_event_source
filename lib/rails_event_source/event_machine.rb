@@ -32,7 +32,6 @@ module RailsEventSource
 
     def load_at_time(datetime)
       clean_state = initial_state
-      clean_state.save
       evts = events.where('created_at < ?', datetime)
       evts.inject(clean_state) { |current, evt| fold(current, evt) }
     end

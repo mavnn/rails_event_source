@@ -16,7 +16,7 @@ RSpec.describe RailsEventSource do
   it 'can add an event to an event machine' do
     writing_exercise = WritingExercise.create
     writing_exercise.process_command(field: 'title', text: 'My title')
-    expect(writing_exercise.state.title).to eq('My title') 
+    expect(writing_exercise.state.title).to eq('My title')
   end
 
   it 'can add events to an event machine' do
